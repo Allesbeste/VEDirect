@@ -11,11 +11,14 @@
 #define VEDirect_kPanelCurrent   (0xEDBD)
 #define VEDirect_kChargeCurrent  (0xEDD7)
 #define VEDirect_kPanelPower     (0xEDBC)
+#define VEDirect_kLoadCurrent    (0xEDAD)
+#define VEDirect_kLoadVoltage    (0xEDA9)
 
 #define VEDirect_kNetworkMode    (0x200E)
 #define VEDirect_VoltageSetpoint (0x2001)
 #define VEDirect_CurrentLimit    (0x2015)
-#define VEDirect_kDeviceState    (0x0201)
+#define VEDirect_DeviceState     (0x0201)
+#define VEDirect_LoadOutputCtrl  (0xEDAB)
 
 #define VEDirect_kExternalControlMode (0x05)
 

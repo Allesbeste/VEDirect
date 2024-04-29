@@ -31,12 +31,30 @@ void VEDirect::update() {
           rxCallback(id, ved_getU32(&rxBuffer));
           break;
         case VEDirect_kPanelVoltage:
+          rxCallback(id, ved_getU16(&rxBuffer));
+          break;
         case VEDirect_kPanelCurrent:
+          rxCallback(id, ved_getU16(&rxBuffer));
+          break;
         case VEDirect_kChargeVoltage:
+          rxCallback(id, ved_getU16(&rxBuffer));
+          break;
         case VEDirect_kChargeCurrent:
           rxCallback(id, ved_getU16(&rxBuffer));
           break;
-        case VEDirect_kDeviceState:
+        case VEDirect_kBatterySense:
+          rxCallback(id, ved_getU16(&rxBuffer));
+          break;
+        case VEDirect_kLoadCurrent:
+          rxCallback(id, ved_getU16(&rxBuffer));
+          break;
+        case VEDirect_kLoadVoltage:
+          rxCallback(id, ved_getU16(&rxBuffer));
+          break;
+        case VEDirect_DeviceState:
+          rxCallback(id, ved_getU8(&rxBuffer));
+          break;
+        case VEDirect_LoadOutputCtrl:
           rxCallback(id, ved_getU8(&rxBuffer));
           break;
         default:
@@ -58,6 +76,9 @@ size_t VEDirect::set(uint16_t id, int32_t value) {
     ved_setU16(&txBuffer, value);
     break;
   case VEDirect_kNetworkMode:
+    ved_setU8(&txBuffer, value);
+    break;
+  case VEDirect_LoadOutputCtrl:
     ved_setU8(&txBuffer, value);
     break;
   default:
